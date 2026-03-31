@@ -1,0 +1,20 @@
+{
+  "name": "praticewebsite",
+  "version": "1.0.0",
+  "description": "pratice website to demonstrate good database setup",
+  "homepage": "https://github.com/crawfordd11/praticeWebsite#readme",
+  "bugs": {
+    "url": "https://github.com/crawfordd11/praticeWebsite/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crawfordd11/praticeWebsite.git"
+  },
+  "license": "ISC",
+  "author": "DJSC",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
