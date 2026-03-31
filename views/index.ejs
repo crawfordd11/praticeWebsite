@@ -118,7 +118,11 @@
             <tbody>
                 <% users.forEach(user => { %>
                     <tr>
-                        <td><%= user.name %></td>
+                        <td>
+                            <a href="/student/<%= user._id%>">
+                                <%= user.name %>
+                            </a>
+                        </td>
                         <td><%= user.email %></td>
                         <td><%= user.gender %></td>
                         <td><%= user.dateOfBirth %></td>

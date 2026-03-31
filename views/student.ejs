@@ -4,6 +4,11 @@
     <title>Student Page</title>
 </head>
 <body>
-    <h1>Welcome, <%= studentName %>!</h1>
+    <h1>Welcome, <%= user.name %>!</h1>
+
+    <p>Email: <%= user.email %></p>
+    <p>Gender: <%= user.gender %></p>
+    <p>Date of Birth: <%= user.dateOfBirth %></p>
+    <a href="/">Back to Home</a>
 </body>
 </html>

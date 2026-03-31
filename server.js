@@ -40,8 +40,14 @@ app.get('/', async (req, res) => {
   });
 });
 
-app.get('/student/:name', (req, res) => {
-  res.render('student', { studentName: req.params.name });
+app.get('/student/:_id', async (req, res) => {
+  const user = await User.findById(req.params._id);
+
+  if (!user) {
+    return res.send("User not found");
+  }
+
+  res.render('student', { user });
 });
 
 // Start server
