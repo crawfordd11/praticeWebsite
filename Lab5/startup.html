@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Assignment: Forms and Tables</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            align-items: center;
+            margin-bottom: 10px;
+
+        }
+
+        .form-row label {
+            text-align: left;
+            padding-right: 10px;
+        }
+
+        .form-row input,
+        .form-row div {
+            justify-self: end;
+        }
+
+        .form-container {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 88%;
+        }
+
+        .table-container {
+            margin: 20px auto;
+            width: 88%;
+
+        }
+
+        .body-container {
+            background-color: #f9f9f9;
+            width: 60%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-container">
+        <h1>Student Registration Form</h1>
+
+        <!-- TODO 1: Create a form with the following fields:
+            - Name (text input)
+            - Email (email input)
+            - Password (password input)
+            - Gender (radio buttons: Male, Female, Other)
+            - Date of Birth (date input)
+            - Submit button
+        -->
+
+
+
+        <form id="infoForm" action="#" method="post">
+            <fieldset class="form-container">
+                <div class="form-row">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Alex Johnson" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="alex.johnson@example.com" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="*******************************" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="gender">Gender:</label>
+                    <div>
+                        <input type="radio" id="gender-male" name="gender" value="Male"> Male
+                        <input type="radio" id="gender-female" name="gender" value="Female"> Female
+                        <input type="radio" id="gender-other" name="gender" value="Other"> Other
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dateOfBirth" required>
+                </div>
+
+                <div class="form-row">
+                    <input type="submit" value="Submit">
+                </div>
+
+            </fieldset>
+        </form>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- TODO 2: Create a table to display student data with the following columns:
+            - Name
+            - Email
+            - Gender
+            - Date of Birth
+        -->
+
+        <h2>Student Data</h2>
+        <table class="table-container" id="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alex Johnson</td>
+                    <td>alex.johnson@example.com</td>
+                    <td>Male</td>
+                    <td>1995-06-15</td>
+                </tr>
+                <tr>
+                    <td>Jlex Honson</td>
+                    <td>jlex.honson@example.com</td>
+                    <td>Male</td>
+                    <td>1995-02-15</td>
+                </tr>
+                <tr>
+                    <td>Jaylee Sample</td>
+                    <td>jaylee.sample@example.com</td>
+                    <td>Female</td>
+                    <td>1996-03-22</td>
+                </tr>
+                <tr>
+                    <td>Taylor Thanks</td>
+                    <td>taylor.thanks@example.com</td>
+                    <td>Other</td>
+                    <td>1999-12-22</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="tableRows.js"></script>
+    </div>
+
+</body>
+
+</html>
