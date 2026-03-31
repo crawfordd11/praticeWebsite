@@ -66,17 +66,17 @@
             <fieldset class="form-container">
                 <div class="form-row">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" placeholder="Alex Johnson" required>
+                    <input type="text" name="name" id="name" placeholder="Alex Johnson" required>
                 </div>
 
                 <div class="form-row">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="alex.johnson@example.com" required>
+                    <input type="email" name="email" id="email" placeholder="alex.johnson@example.com" required>
                 </div>
 
                 <div class="form-row">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" placeholder="*******************************" required>
+                    <input type="password" name="password" id="password" placeholder="**********************************" required>
                 </div>
 
                 <div class="form-row">
@@ -90,7 +90,7 @@
 
                 <div class="form-row">
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dateOfBirth" required>
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" required>
                 </div>
 
                 <div class="form-row">
@@ -112,6 +112,7 @@
                     <th>Email</th>
                     <th>Gender</th>
                     <th>Date of Birth</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -121,6 +122,11 @@
                         <td><%= user.email %></td>
                         <td><%= user.gender %></td>
                         <td><%= user.dateOfBirth %></td>
+                        <td>
+                            <form action="/delete/<%= user._id %>" method="POST" style="display:inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>

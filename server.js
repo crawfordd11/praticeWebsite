@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-app.use(express.urlencoded({ extended: true }));
-
 const app = express();
 const port = 3000;
+
+app.use(express.urlencoded({ extended: true }));
 
 // Set EJS
 app.set('view engine', 'ejs');
@@ -14,10 +14,18 @@ mongoose.connect("mongodb://localhost:27017/mydatabase")
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error(err));
 
-// Define schema + model
+// // Define schema + model
+// const userContactSchema = new mongoose.Schema({
+//   name: String,
+//   email: String
+// });
+
 const userSchema = new mongoose.Schema({
   name: String,
-  email: String
+  email: String,
+  password: String,
+  gender: String,
+  dateOfBirth: String
 });
 
 const User = mongoose.model("User", userSchema);
@@ -39,4 +47,29 @@ app.get('/student/:name', (req, res) => {
 // Start server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
+});
+
+app.post('/delete/:_id', async (req, res) => {
+  const id = req.params._id;
+
+  await User.findByIdAndDelete(id);
+
+  res.redirect('/');
+});
+
+app.post('/addStudent', async (req, res) => {
+  console.log(req.body);
+  const { name, email, password, gender, dateOfBirth } = req.body;
+
+  const newUser = new User({
+    name,
+    email,
+    password,
+    gender,
+    dateOfBirth
+  });
+
+  await newUser.save();
+
+  res.redirect('/');
 });
