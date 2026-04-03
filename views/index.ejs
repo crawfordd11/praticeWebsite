@@ -61,7 +61,6 @@
     <div class="body-container">
         <h1>Student Registration Form</h1>
 
- 
         <form action="/addStudent" method="POST">
             <fieldset class="form-container">
                 <div class="form-row">
@@ -129,6 +128,9 @@
                         <td>
                             <form action="/delete/<%= user._id %>" method="POST" style="display:inline;">
                                 <button type="submit">Delete</button>
+                            </form>
+                            <form action="/edit/<%= user._id %>" method="GET" style="display:inline;">
+                                <button type="submit">Edit</button>
                             </form>
                         </td>
                     </tr>

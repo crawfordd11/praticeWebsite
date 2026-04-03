@@ -9,6 +9,12 @@
     <p>Email: <%= user.email %></p>
     <p>Gender: <%= user.gender %></p>
     <p>Date of Birth: <%= user.dateOfBirth %></p>
+    <form action="/delete/<%= user._id %>" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+    </form>
+    <form action="/edit/<%= user._id %>" method="GET" style="display:inline;">
+        <button type="submit">Edit</button>
+    </form>
     <a href="/">Back to Home</a>
 </body>
 </html>
